@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 프로젝트 제목
 
-## Getting Started
+- 이상형 월드컵 사이트
 
-First, run the development server:
+## 참여자
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 석지웅 ( 1인 프로젝트)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 프로젝트 목적
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 새로운 프레임워크 및 툴 학습
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 페이지 목록
 
-## Learn More
+- 이상형 월드컵 리스트 페이지
+- 이상형 월드컵 생성 페이지
+- 이상형 월드컵 상세 페이지
+- 이상형 월드컵 진행 페이지
+- 로그인 페이지
 
-To learn more about Next.js, take a look at the following resources:
+## 주요 기능 목록
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 이상형 월드컵 가져오기
+- 이상형 월드컵 게임 진행
+- 이상형 월드컵 생성
+- 소셜 로그인
+- 댓글 / 답글
+- 결과 기록
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 프로젝트 설계
 
-## Deploy on Vercel
+- 기술 스택 선정
+  - 언어 - typescript
+  - 프레임워크 - Next JS
+  - 스타일링 - tailwind CSS
+  - 상태 관리 - react hook 혹은 zustand
+  - 백엔드 기능 및 서비스 배포 - firebase
+  - UI 디자인 - 디자인은 따로 없이 기존 이상형 월드컵 사이트인 piku , 슈퍼컵을 참조하여 임의로 구축한다.
+- 페이지 및 폴더 구조
+  - public : 이미지 및 폰트 등 자원을 보관할 폴더
+    - images : 이미지 보관 폴더
+  - lib : 그 밖의 라이브러리 코드
+    - firebase : 파이어베이스 기능을 사용하기 위한 코드를 관리하는 폴더
+  - src ( 각 컴포넌트의 css 파일은 각 폴더에서 관리 → 탐색이 쉽고 )
+    - app : 페이지 엔트리를 넣을 폴더
+      - list : 이상형 월드컵 리스트 페이지 ( 메인 페이지 )
+      - new : 이상형 월드컵 생성 페이지
+      - detail : 이상형 월드컵 상세 페이지
+      - play : 이상형 월드컵 진행 페이지
+      - login : 로그인 페이지
+    - components : 재사용 컴포넌트를 넣을 폴더
+      - header : 전체 레이아웃 헤더 컴포넌트
+      - footer : 전체 레이아웃 푸터 컴포넌트
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 기술 블로그 포스팅 재료
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 이상형 월드컵 진행 코드 공유
+- Next JS 도입기
+  - next js 장단점 , 사용하는 이유
+- tailwind css 도입기
+- 파이어베이스로 웹 사이트 배포하기
+- 파이어베이스 소셜 로그인 연동하는 방법
+- 파이어베이스 파이어스토어 사용법
+- zustand 간단한 사용법 → 장단점 , 사용 방법
+
+## 문서화 컨벤션
+
+- 깃허브 이슈 컨벤션
+  - 할 일 체크 리스트 목적으로 생성, 이슈 번호를 통해 브랜치 생성에 활용할 수 있다.
+  - 이슈 양식
+    - 제목
+    - 할 일 ( 체크 리스트 생성 )
+    - 메모
+  - 작업 시작 하기전 이슈를 양식에 따라 생성하고, 할 일 목록에 체크하면서 작업 진행, 메모에는
+    작업 도중 특이 사항을 메모한다. 그리고 파일 및 코드 근처에 주석을 남겨야 한다.
+  - 이슈 생성 단위
+    - works : 오늘의 작업
+    - fix : 기능이 동작하지 않거나 잘못 작업된 코드를 수정
+    - update : 기능이나 디자인 등의 변경 및 작업 취소에 의해 수정 작업
+  - 브랜치 네이밍 방식
+    - “issue\_ + 이슈 번호 + 이슈 생성 단위( work, fix, update )
+  - 커밋 컨벤션 단위
+    - 이슈로 만든 works 는 어떤 작업인지 작성 → 따로 정해진 양식 없음.
