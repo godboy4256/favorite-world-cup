@@ -4,11 +4,15 @@ import styles from "./button.module.css";
 type ButtonType = {
   text: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  fullWidth?: boolean;
 };
 
-const Button = ({ text, onClick }: ButtonType) => {
+const Button = ({ text, onClick, fullWidth }: ButtonType) => {
   return (
-    <button onClick={onClick} className={styles.button}>
+    <button
+      onClick={onClick}
+      className={`${fullWidth && "w_100"} ${styles.button}`}
+    >
       {text}
     </button>
   );

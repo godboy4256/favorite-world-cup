@@ -5,10 +5,20 @@
 button {
   cursor: pointer;
   outline: none;
+  border: none;
+  background: none;
+}
+
+input {
+  outline: none;
 }
 
 .center_wrapper {
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
+}
+
+.w_100 {
+  width: 100%;
 }
