@@ -7,7 +7,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={`${styles.wrapper} center_wrapper`}>
         <h1 className={styles.logo}>
-          <img src="./images/cup_logo.svg" alt="header logo" />
+          <img src="/images/cup_logo.svg" alt="header logo" />
           Cup Game
         </h1>
         <div>다양한 주제를 가진 이상형 월드컵을 플레이 하세요!</div>
