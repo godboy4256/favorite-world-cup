@@ -3,7 +3,7 @@ import styles from "./button.module.css";
 
 type ButtonType = {
   text: string;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+  onClick?: () => void;
   fullWidth?: boolean;
 };
 

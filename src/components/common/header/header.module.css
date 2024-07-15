@@ -19,3 +19,12 @@
   width: 30px;
   margin-right: 10px;
 }
+
+.logout {
+  display: flex;
+  align-items: center;
+}
+
+.logout > div {
+  margin-right: 10px;
+}
