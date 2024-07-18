@@ -1,13 +1,12 @@
 "use client";
-import React, { useState } from "react";
+
+import React, { useEffect, useState } from "react";
 import styles from "./header.module.css";
-import Button from "@/components/inputs/button/button";
+import Button from "@/components/input/button/button";
 import { LogOutGoogle, LoginGoogle } from "../../../../lib/firebase/auth";
 
 const Header = () => {
-  const [isUser, setIsUser] = useState(
-    sessionStorage.getItem("uid") ? true : false
-  );
+  const [isUser, setIsUser] = useState(false);
 
   const onClickLogin = () => {
     LoginGoogle(setIsUser);
@@ -24,11 +23,13 @@ const Header = () => {
           Cup Game
         </h1>
         <div>
-          {sessionStorage.getItem("displayName") && (
-            <div>
-              <span>{sessionStorage.getItem("displayName")}</span>님 환영합니다.
-            </div>
-          )}
+          {typeof window !== "undefined" &&
+            sessionStorage.getItem("displayName") && (
+              <div>
+                <span>{sessionStorage.getItem("displayName")}</span>님
+                환영합니다.
+              </div>
+            )}
           <div>다양한 주제를 가진 이상형 월드컵을 플레이 하세요!</div>
         </div>
         {isUser ? (
