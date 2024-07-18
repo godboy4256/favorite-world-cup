@@ -20,7 +20,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db: any = getFirestore(app);
 
 // 구글 소셜 로그인
 const provider = new GoogleAuthProvider();
