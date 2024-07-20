@@ -11,10 +11,13 @@ const LoginGoogle = (setIsUser: Dispatch<SetStateAction<boolean>>) => {
 
       sessionStorage.setItem("accessToken", accessToken);
       // 엑세스 토큰 추가 -> 로그인 상태 유효성 검사
+
       sessionStorage.setItem("uid", uid);
       // 각 유저의 아이템을 저장하기 위해 고유 id가 필요
+
       sessionStorage.setItem("displayName", displayName);
       // 헤더에 이름 기입
+
       alert("로그인 되었습니다.");
       setIsUser(true);
     })

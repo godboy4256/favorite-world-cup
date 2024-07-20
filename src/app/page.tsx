@@ -3,11 +3,12 @@
 import { useEffect, useState } from "react";
 import { getFireStoreAllData } from "../../lib/firebase/firestore";
 import { compListKeyID } from "../../utils/idGenerator";
-import WclistCard from "@/components/list/item/wclist/wclist";
-import WcContainer from "@/components/list/container/wccontainer/wccontainer";
+import WclistCard from "@/components/list/item/wclist/wclistitem";
+import WcContainer from "@/components/list/container/wclist/wclistcontainer";
 
 type WcType = {
   name: string;
+  id: string;
   description: string;
   thumnail: string;
   playCount: number;
@@ -18,81 +19,6 @@ type WcType = {
 export default function Home() {
   const [wcList, setWcList] = useState([]);
 
-  let wcList2 = [
-    {
-      name: "축구",
-      writer: "석지웅",
-      description: "좋아하는 축구팀은?",
-      thumnail: "",
-      playCount: 0,
-      createdAt: "2024-07-18",
-    },
-    {
-      name: "축구",
-      writer: "석지웅",
-      description: "좋아하는 축구팀은?",
-      thumnail: "",
-      playCount: 0,
-      createdAt: "2024-07-18",
-    },
-    {
-      name: "축구",
-      writer: "석지웅",
-      description: "좋아하는 축구팀은?",
-      thumnail: "",
-      playCount: 0,
-      createdAt: "2024-07-18",
-    },
-    {
-      name: "축구",
-      writer: "석지웅",
-      description: "좋아하는 축구팀은?",
-      thumnail: "",
-      playCount: 0,
-      createdAt: "2024-07-18",
-    },
-    {
-      name: "축구",
-      writer: "석지웅",
-      description: "좋아하는 축구팀은?",
-      thumnail: "",
-      playCount: 0,
-      createdAt: "2024-07-18",
-    },
-    {
-      name: "축구",
-      writer: "석지웅",
-      description: "좋아하는 축구팀은?",
-      thumnail: "",
-      playCount: 0,
-      createdAt: "2024-07-18",
-    },
-    {
-      name: "축구",
-      writer: "석지웅",
-      description: "좋아하는 축구팀은?",
-      thumnail: "",
-      playCount: 0,
-      createdAt: "2024-07-18",
-    },
-    {
-      name: "축구",
-      writer: "석지웅",
-      description: "좋아하는 축구팀은?",
-      thumnail: "",
-      playCount: 0,
-      createdAt: "2024-07-18",
-    },
-    {
-      name: "축구",
-      writer: "석지웅",
-      description: "좋아하는 축구팀은?",
-      thumnail: "",
-      playCount: 0,
-      createdAt: "2024-07-18",
-    },
-  ];
-
   useEffect(() => {
     getFireStoreAllData("wc_list", (answer) => setWcList(answer));
   }, []);
@@ -100,10 +26,11 @@ export default function Home() {
   return (
     <main className="center_wrapper">
       <WcContainer>
-        {wcList.map((wc: WcType, index: number) => {
+        {wcList?.map((wc: WcType, index: number) => {
           return (
             <WclistCard
               key={compListKeyID(String(wc), index)}
+              id={wc.id}
               name={wc.name}
               description={wc.description}
               thumnail={wc.thumnail}
