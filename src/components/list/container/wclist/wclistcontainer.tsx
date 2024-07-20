@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./wccontainer.module.css";
+import styles from "./wclistcontainer.module.css";
 
-const WcContainer = ({
+const WcListContainer = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -9,4 +9,4 @@ const WcContainer = ({
   return <ul className={styles.container}>{children}</ul>;
 };
 
-export default WcContainer;
+export default WcListContainer;

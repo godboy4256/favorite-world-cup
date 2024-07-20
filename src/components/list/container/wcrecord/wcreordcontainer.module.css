@@ -1,0 +1,35 @@
+.container {
+  margin-top: 50px;
+}
+.title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.header {
+  display: flex;
+  background-color: var(--main-color);
+  color: white;
+  padding: 20px 0;
+}
+.header > div {
+  border-right: 1px solid white;
+  text-align: center;
+}
+.header > div:last-child {
+  border-right: none;
+}
+.rank {
+  width: 8%;
+}
+.img {
+  width: 12%;
+}
+.name {
+  width: 50%;
+}
+.selectcount {
+  width: 15%;
+}
+.wincount {
+  width: 15%;
+}

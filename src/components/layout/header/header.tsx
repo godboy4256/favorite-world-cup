@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./header.module.css";
 import Button from "@/components/input/button/button";
 import { LogOutGoogle, LoginGoogle } from "../../../../lib/firebase/auth";
